@@ -972,14 +972,16 @@ function render() {
     loadPosts(state.currentCategory);
   } else if (state.currentPage === 'admin') {
     loadAdminData();
+  } else if (state.currentPage === 'help') {
+    loadHelpRequests(state.currentHelpCategory);
   } else if (state.currentPage === 'create') {
-    // 파일 업로드 UI 표시
-        // if (typeof showFileUpload === 'function') {
+    // 파일 업로드 UI 표시 (R2 버킷 없이는 비활성화)
+    // if (typeof showFileUpload === 'function') {
     //   showFileUpload();
     // }
-
   }
 }
+
 
 // 초기화
 document.addEventListener('DOMContentLoaded', () => {
