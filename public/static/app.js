@@ -7,8 +7,12 @@ const state = {
   searchKeyword: '',
   posts: [],
   currentPost: null,
-  currentVote: null
+  currentVote: null,
+  helpRequests: [],
+  currentHelpRequest: null,
+  currentHelpCategory: 'all'
 };
+
 
 // 로컬 스토리지에서 토큰 가져오기
 function loadToken() {
