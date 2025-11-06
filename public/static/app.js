@@ -285,7 +285,8 @@ async function loadPosts(category = 'all') {
 
 // 게시글 상세 페이지
 function renderPost() {
-  if (!state.currentPost) {
+  // postId가 바뀌었거나 currentPost가 없으면 새로 로드
+  if (!state.currentPost || state.currentPost.id !== state.postId) {
     loadPost(state.postId);
     return `
       <div class="max-w-4xl mx-auto px-4 py-8">
