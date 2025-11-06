@@ -217,7 +217,6 @@ function renderHome() {
 // 게시글 목록 로드
 async function loadPosts(category = 'all') {
   state.currentCategory = category;
-  render();
 
   try {
     let url = category === 'all' 
