@@ -82,12 +82,17 @@ function renderNav() {
     <nav class="bg-white shadow-sm border-b border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-          <div class="flex items-center">
+          <div class="flex items-center space-x-6">
             <button onclick="navigate('home')" class="flex items-center">
               <i class="fas fa-home text-2xl text-blue-600 mr-3"></i>
-              <span class="text-xl font-bold text-gray-800">한마을아파트 개선 포럼</span>
+              <span class="text-xl font-bold text-gray-800">한마을아파트</span>
+            </button>
+            <button onclick="navigate('help')" class="flex items-center px-3 py-2 rounded-md ${state.currentPage === 'help' || state.currentPage === 'help-detail' || state.currentPage === 'help-create' ? 'bg-green-50 text-green-700' : 'text-gray-700 hover:bg-gray-100'}">
+              <i class="fas fa-hands-helping mr-2"></i>
+              <span class="font-medium">도와주세요</span>
             </button>
           </div>
+
           
           <div class="flex items-center space-x-4">
             ${state.user ? `
@@ -937,6 +942,15 @@ function render() {
     case 'create':
       content = renderNav() + renderCreate();
       break;
+    case 'help':
+      content = renderNav() + renderHelp();
+      break;
+    case 'help-detail':
+      content = renderNav() + renderHelpDetail();
+      break;
+    case 'help-create':
+      content = renderNav() + renderHelpCreate();
+      break;
     case 'login':
       content = renderLogin();
       break;
@@ -949,6 +963,7 @@ function render() {
     default:
       content = renderNav() + renderHome();
   }
+
   
   app.innerHTML = content;
   
