@@ -5,5 +5,12 @@
   "pages_build_output_dir": "./dist",
   "compatibility_flags": [
     "nodejs_compat"
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "382apt",
+      "database_id": "a2924e02-3675-4b01-91ac-fd6af8490225"
+    }
   ]
 }
