@@ -569,7 +569,8 @@ function renderCreate() {
         </div>
 
         <!-- 파일 업로드 -->
-        <div id="file-upload-container"></div>
+
+
 
         <div class="flex justify-end space-x-3">
           <button onclick="navigate('home')" class="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50">
@@ -611,9 +612,10 @@ async function submitPost() {
     const postId = response.data.data.id;
 
     // 파일 업로드 (있는 경우)
-    if (typeof uploadFiles === 'function') {
-      await uploadFiles(postId);
-    }
+        // if (typeof uploadFiles === 'function') {
+    //   await uploadFiles(postId);
+    // }
+
 
     alert('게시글이 작성되었습니다');
     navigate('post', { postId });
@@ -953,9 +955,10 @@ function render() {
     loadAdminData();
   } else if (state.currentPage === 'create') {
     // 파일 업로드 UI 표시
-    if (typeof showFileUpload === 'function') {
-      showFileUpload();
-    }
+        // if (typeof showFileUpload === 'function') {
+    //   showFileUpload();
+    // }
+
   }
 }
 
